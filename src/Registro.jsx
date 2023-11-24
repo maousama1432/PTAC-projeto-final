@@ -1,3 +1,3 @@
 useEffect(() => {
-    localStorage.setItem("List", JSON.stringify(list));
- }, [list]);
+    localStorage.setItem("musica", JSON.stringify(musica));
+ }, [musica]);
