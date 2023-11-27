@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 
-export default function Home(){
-    return(
-        <h1>PTAC 2 - PROJETO FINAL</h1>
-     );
-}
+const Home = () => {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const videosArray = JSON.parse(localStorage.getItem("videos"));
+    setVideos(videosArray);
+  }, []);
+
+};
+
+export default Home;
