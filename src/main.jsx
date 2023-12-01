@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './Home';
-import Registro from './Registro';
+import Registro from './components/Registro';
 import Destaque from './Destaque';
 import Menu from './Menu';
 
