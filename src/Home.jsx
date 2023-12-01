@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from 'react';
+import Card from './Card';
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const videosArray = JSON.parse(localStorage.getItem("videos"));
+    const videosArray = JSON.parse(localStorage.getItem('videos'));
     setVideos(videosArray);
   }, []);
 
@@ -12,10 +13,7 @@ const Home = () => {
     <div>
       <h2>Home</h2>
       {videos.map((video) => (
-        <div key={video.id}>
-          <h3>{video.titulo}</h3>
-          <p>{video.descricao}</p>
-        </div>
+        <Card key={video.id} titulo={video.titulo} descricao={video.descricao} url={video.url} />
       ))}
     </div>
   );
