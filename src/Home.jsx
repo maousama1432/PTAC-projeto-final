@@ -15,6 +15,7 @@ const Home = () => {
       {videos.map((video) => (
         <Card key={video.id} titulo={video.titulo} descricao={video.descricao} url={video.url} />
       ))}
+      <Route path="/:id" exact component={Detalhes} />
     </div>
   );
 };
