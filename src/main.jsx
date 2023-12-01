@@ -5,16 +5,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Registro from './Registro';
 import Destaque from './Destaque';
+import Menu from './Menu';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cadastro" element={<Registro />} />
-        <Route path="/destaque" element={<Destaque />} />
-        <Route path="/:id" element={<Detalhes />} />
-      </Routes>
+      <div>
+        <Menu videos={videos} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cadastro" element={<Registro />} />
+          <Route path="/destaque" element={<Destaque />} />
+          <Route path="/:id" element={<Detalhes />} />
+        </Routes>
+      </div>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
