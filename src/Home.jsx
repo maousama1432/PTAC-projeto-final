@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const videosArray = JSON.parse(localStorage.getItem('videos'));
+    const videosArray = JSON.parse(localStorage.getItem('videos')) || [];
     setVideos(videosArray);
   }, []);
 
