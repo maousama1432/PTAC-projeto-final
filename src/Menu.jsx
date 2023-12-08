@@ -1,21 +1,15 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = ({ videos }) => {
   return (
-    <div>
-      <h2>Menu</h2>
+    <nav>
       <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/cadastro">Cadastro</a>
-        </li>
-        <li>
-          <a href="/destaque">Destaque</a>
-        </li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/cadastro">Cadastro</Link></li>
+        <li><Link to="/destaque">Destaque</Link></li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
