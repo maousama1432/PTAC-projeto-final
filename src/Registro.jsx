@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Registro = () => {
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
-  const [url, setUrl] = useState('');
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [url, setUrl] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,13 +14,13 @@ const Registro = () => {
       url,
     };
 
-    const videosArray = JSON.parse(localStorage.getItem('videos')) || [];
+    const videosArray = JSON.parse(localStorage.getItem("videos")) || [];
     videosArray.push(novoVideo);
-    localStorage.setItem('videos', JSON.stringify(videosArray));
+    localStorage.setItem("videos", JSON.stringify(videosArray));
 
-    setTitulo('');
-    setDescricao('');
-    setUrl('');
+    setTitulo("");
+    setDescricao("");
+    setUrl("");
   };
 
   return (
@@ -34,6 +34,11 @@ const Registro = () => {
         <label>URL:</label>
         <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} />
         <button type="submit">Registrar</button>
+        <button type="button" onClick={() => {
+          setTitulo("");
+          setDescricao("");
+          setUrl("");
+        }}>Limpar</button>
       </form>
     </div>
   );

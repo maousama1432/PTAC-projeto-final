@@ -1,15 +1,16 @@
 import React from "react";
 
-const Card = ({ titulo, descricao, url }) => {
+const Card = ({ id, tituloVideo, descricao, url, imagem }) => {
   return (
     <div className="card">
-      <h3>{titulo}</h3>
+      <img src={imagem} alt="Imagem do vídeo" />
+      <h3>{tituloVideo}</h3>
       <p>{descricao}</p>
       <iframe
         width="560"
         height="315"
         src={"https://www.youtube.com/embed/" + url.slice(17)}
-        title={titulo}
+        title={tituloVideo}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>

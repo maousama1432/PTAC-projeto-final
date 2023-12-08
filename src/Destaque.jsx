@@ -1,21 +1,19 @@
 import React from 'react';
+import Card from './Card';
 
-const Detalhes = ({ video }) => {
+const Destaque = ({ videos }) => {
+  // Lógica para obter os quatro últimos vídeos
+  const ultimosQuatroVideos = videos.slice(-4);
+
   return (
     <div>
-      <h2>Detalhes do Vídeo</h2>
-      <h3>{video.titulo}</h3>
-      <p>{video.descricao}</p>
-      <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${video.url.slice(17)}`}
-        title={video.titulo}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <h2>Destaque</h2>
+      {ultimosQuatroVideos.map((video) => (
+        <Card key={video.id} titulo={video.titulo} descricao={video.descricao} url={video.url} />
+      ))}
     </div>
   );
 };
 
-export default Detalhes;
+export default Destaque;
+
