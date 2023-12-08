@@ -1,8 +1,10 @@
 import React from 'react';
 import Card from './Card';
 
-const Destaque = ({ videos }) => {
+const Destaque = () => {
+  const videos = JSON.parse(localStorage.getItem('videos')) || [];
   // Lógica para obter os quatro últimos vídeos
+
   const ultimosQuatroVideos = videos.slice(-4);
 
   return (
@@ -16,4 +18,3 @@ const Destaque = ({ videos }) => {
 };
 
 export default Destaque;
-
