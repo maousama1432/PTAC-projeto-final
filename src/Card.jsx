@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Card = ({ titulo, descricao, url }) => {
+const Card = ({ titulo, descricao, url, isMusica, letra }) => {
+  const [mostrarLetra, setMostrarLetra] = useState(false);
+
   return (
     <div className="card">
       <h3>{titulo}</h3>
@@ -13,6 +15,12 @@ const Card = ({ titulo, descricao, url }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
+      {isMusica && (
+        <div>
+          <button onClick={() => setMostrarLetra(!mostrarLetra)}>Mostrar Letra</button>
+          {mostrarLetra && <p>{letra}</p>}
+        </div>
+      )}
     </div>
   );
 };

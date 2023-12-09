@@ -10,11 +10,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Home</h2>
-      {videos.map((video) => (
-        <Card key={video.id} titulo={video.titulo} descricao={video.descricao} url={video.url} />
-      ))}
+    <div className="container mt-5">
+      <h2 className="mb-4">Home</h2>
+      <div className="row row-cols-2">
+        {videos.map((video) => (
+          <div key={video.id} className="col mb-4">
+            <Card titulo={video.titulo} descricao={video.descricao} url={video.url} isMusica={video.isMusica} letra={video.letra} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
