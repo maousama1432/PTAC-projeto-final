@@ -17,8 +17,26 @@ const Card = ({ titulo, descricao, url, isMusica, letra }) => {
       ></iframe>
       {isMusica && (
         <div>
-          <button onClick={() => setMostrarLetra(!mostrarLetra)}>Mostrar Letra</button>
-          {mostrarLetra && <p>{letra}</p>}
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#letraOffcanvas"
+            aria-controls="letraOffcanvas"
+            onClick={() => setMostrarLetra(!mostrarLetra)}
+          >
+            Mostrar Letra
+          </button>
+
+          <div className="offcanvas offcanvas-end" tabIndex="-1" id="letraOffcanvas" aria-labelledby="letraOffcanvasLabel">
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="letraOffcanvasLabel">Letra da Música</h5>
+              <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div className="offcanvas-body">
+              {mostrarLetra && <p>{letra}</p>}
+            </div>
+          </div>
         </div>
       )}
     </div>
