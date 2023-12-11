@@ -1,3 +1,4 @@
+// Componente para exibir um vídeo como um Card
 import React, { useState } from 'react';
 
 const Card = ({ titulo, descricao, url, isMusica, letra }) => {

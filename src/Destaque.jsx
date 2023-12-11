@@ -1,7 +1,9 @@
+// Página de destaque que exibe os últimos quatro vídeos
 import React from 'react';
 import Card from './Card';
 
 const Destaque = () => {
+  // Obtém a lista de vídeos do armazenamento local
   const videos = JSON.parse(localStorage.getItem('videos')) || [];
 
   // Lógica para obter os quatro últimos vídeos
